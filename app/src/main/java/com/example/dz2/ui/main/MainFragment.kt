@@ -50,7 +50,6 @@ class MainFragment : Fragment() {
 
         viewLifecycleOwner.lifecycleScope.launch {
             loading.isVisible = true
-            delay(2000)
             try {
                 val list = withContext(Dispatchers.IO) { viewModel.getBeers() }
                 beerAdapter.submitList(list)
@@ -60,10 +59,14 @@ class MainFragment : Fragment() {
             } catch (error: Throwable) {
                 loading.isVisible = false
                 stubText.isVisible = true
-                stubText.text = "Error: ${error.message}"
+                stubText.text = (resources.getString(R.string.error) + error.message)
                 error.printStackTrace()
                 stubText.setOnClickListener {
-                    Toast.makeText(activity, "Try again later", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        activity,
+                        resources.getString(R.string.toast_fail),
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
 
             }

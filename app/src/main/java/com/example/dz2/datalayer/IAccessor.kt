@@ -15,7 +15,7 @@ interface IAccessor {
 
 
     companion object {
-        fun create(baseUrl: String): IAccessor {
+        fun create(): IAccessor {
             val loggingInterceptor = HttpLoggingInterceptor().apply {
                 level = HttpLoggingInterceptor.Level.BODY
             }
@@ -27,7 +27,7 @@ interface IAccessor {
             val retrofit = Retrofit.Builder().apply {
                 client(client)
                 addConverterFactory(GsonConverterFactory.create())
-                baseUrl(baseUrl)
+                baseUrl("https://api.punkapi.com")
             }.build()
 
             return retrofit.create(IAccessor::class.java)

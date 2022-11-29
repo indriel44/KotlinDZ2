@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">DZ2</string>
-    <string name="base_url">https://api.punkapi.com</string>
+    <string name="toast_fail">Try again later</string>
+    <string name="error">Error:</string>
+    <string name="mainfragment">MainFragment</string>
+    <string name="Ratio">1:1</string>
 </resources>
