@@ -3,9 +3,11 @@ package com.example.dz2.objects
 
 import com.google.gson.annotations.SerializedName
 
-class Beer {
+class Beer: java.io.Serializable {
     @SerializedName("image_url")
-    var id = ""
+    var url = ""
+    fun imageId() = url
 
-    fun imageId() = id
+    @SerializedName("id") var id=""
+    fun Id()= id
 }

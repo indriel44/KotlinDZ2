@@ -4,4 +4,5 @@
     <string name="error">Error:</string>
     <string name="mainfragment">MainFragment</string>
     <string name="Ratio">1:1</string>
+    <string name="columns">2</string>
 </resources>

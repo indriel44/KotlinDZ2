@@ -7,12 +7,15 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
+import retrofit2.http.Url
 
 interface IAccessor {
     @GET("/v2/beers")
     suspend fun getBeers(@Query("abv_lt") limit: Int): List<Beer>
-
+    @GET("/v2/beers/{id}")
+    suspend fun getBeer( @Path("id") id:String): Beer
 
     companion object {
         fun create(): IAccessor {

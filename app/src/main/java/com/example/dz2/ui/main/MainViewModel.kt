@@ -12,4 +12,5 @@ class MainViewModel : ViewModel() {
     private val provider = BeerProvider(accessor)
 
     suspend fun getBeers() = provider.getBeers(100)
+    suspend fun getBeer(id:String)=provider.getBeer(id)
 }
