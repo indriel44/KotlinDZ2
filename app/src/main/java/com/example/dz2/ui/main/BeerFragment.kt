@@ -2,6 +2,7 @@ package com.example.dz2.ui.main
 
 import com.example.dz2.datalayer.IAccessor
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,13 +39,17 @@ class BeerFragment : Fragment() {
 
         viewLifecycleOwner.lifecycleScope.launch {
             try {
-                val beer = withContext(Dispatchers.IO) { viewModel.getBeer(beer.Id())
+                val beer1 = withContext(Dispatchers.IO) {
+                    viewModel.getBeer(beer.Id())
                 }
-                val list: List<Beer> = listOf( beer )
+
+                val list: List<Beer> = listOf( beer1 )
+
                 beerAdapter.submitList(list)
 
 
             } catch (error: Throwable) {
+
 
                 error.printStackTrace()
             }

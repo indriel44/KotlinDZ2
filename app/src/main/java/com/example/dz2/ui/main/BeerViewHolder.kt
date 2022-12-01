@@ -1,6 +1,7 @@
 package com.example.dz2.ui.main
 
 
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
